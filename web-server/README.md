@@ -20,7 +20,3 @@ sudo apt install nginx
 
  `sudo ln -s /etc/nginx/sites-available/namemyvar.com /etc/nginx/sites-enabled/namemyvar.com`
 4. Reload NGINX to make the configuration take effect: `sudo systemctl reload nginx`
-
-### Things to Note
-
-The regular config file will only work on a server that has the correct domain pointed to it. For testing, use the `namemyvartest.com` file
