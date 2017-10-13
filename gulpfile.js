@@ -13,7 +13,11 @@ var client = {
 var gulp = require('gulp');
 var mustache = require('gulp-mustache');
 
-gulp.task('default', ['build-client']);
+gulp.task('default', ['watch']);
+gulp.task('watch', function() {
+	var f = client.html.concat(client.css.concat(client.js));
+	gulp.watch(f, ['build-client']);
+});
 gulp.task('build-client', function() {
 	gulp.src(client.html)
 		.pipe(mustache(client.settings))
