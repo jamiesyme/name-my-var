@@ -12,6 +12,7 @@ var client = {
 
 var gulp = require('gulp');
 var mustache = require('gulp-mustache');
+var rename = require('gulp-rename');
 
 gulp.task('default', ['watch']);
 gulp.task('watch', function() {
@@ -21,6 +22,7 @@ gulp.task('watch', function() {
 gulp.task('build-client', function() {
 	gulp.src(client.html)
 		.pipe(mustache(client.settings))
+		.pipe(rename(function(path) { path.extname = '.html'; }))
 		.pipe(gulp.dest(client.dist));
 	gulp.src(client.css)
 		.pipe(gulp.dest(client.dist));
