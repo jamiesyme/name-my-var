@@ -1,0 +1,15 @@
+header {
+	align-items: center;
+	display: flex;
+	height: 6.4rem;
+	justify-content: center;
+}
+
+.header-title {
+	font-size: 3.6rem;
+}
+
+header .nav-link {
+	left: 0;
+	position: absolute;
+}

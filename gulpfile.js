@@ -3,9 +3,17 @@ var c = function(f) {
 }
 
 var client = {
-	html:     [c('index.mustache')],
-	css:      [c('*.css')],
-	js:       [c('*.js')],
+	html: [
+		c('index.mustache'),
+	],
+	css: [
+		c('*.css'),
+		'node_modules/milligram/dist/milligram.css',
+		'node_modules/normalize.css/normalize.css',
+	],
+	js: [
+		c('*.js'),
+	],
 	settings: c('settings.json'),
 	dist:     c('dist')
 };
@@ -16,8 +24,11 @@ var rename = require('gulp-rename');
 
 gulp.task('default', ['watch']);
 gulp.task('watch', function() {
-	var f = client.html.concat(client.css.concat(client.js));
-	gulp.watch(f, ['build-client']);
+	gulp.watch([
+		c('*.mustache'),
+		c('*.css'),
+		c('*.js'),
+	], ['build-client']);
 });
 gulp.task('build-client', function() {
 	gulp.src(client.html)
