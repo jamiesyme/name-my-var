@@ -26,7 +26,7 @@ $ yarn run gulp build-client
 
 To watch the files and build the web client whenever a file changes:
 
-```
+```bash
 $ yarn run gulp
 # or
 $ yarn run gulp watch
