@@ -11,6 +11,10 @@
 	.sidebar {
 		width: 6.4rem;
 	}
+
+	header, main, footer {
+		margin-left: 6.4rem;
+	}
 }
 
 .sidebar-open {
