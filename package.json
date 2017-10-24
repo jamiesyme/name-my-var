@@ -12,9 +12,11 @@
     "gulp-rename": "^1.2.2"
   },
   "scripts": {
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "start": "cd web-server && node server.js"
   },
   "dependencies": {
+    "hapi": "^16.6.2",
     "milligram": "^1.3.0"
   }
 }
