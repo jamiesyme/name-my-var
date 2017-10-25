@@ -1,8 +1,16 @@
 header {
 	align-items: center;
+	background-color: white;
 	display: flex;
 	height: 6.4rem;
 	justify-content: center;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+main{
+	margin-top: 6.4rem;
 }
 
 .header-title {

@@ -1,0 +1,21 @@
+.banner-container {
+	background-color: #EEE;
+	padding: 7.0rem 5.0rem 11.0rem 5.0rem;
+}
+
+.banner-container form {
+	margin-bottom: 0;
+}
+
+.banner-title {
+	font-size: 6.0rem;
+	margin-bottom: 4.0rem;
+	text-align: center;
+}
+
+input.banner-search {
+	background-color: white;
+	display: block;
+	margin: 0 auto;
+	width: 48.0rem;
+}

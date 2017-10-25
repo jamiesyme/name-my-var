@@ -11,10 +11,20 @@
 	<link rel="stylesheet" href="common.css">
 	<link rel="stylesheet" href="header.css">
 	<link rel="stylesheet" href="nav.css">
+	<link rel="stylesheet" href="index.css">
 </head>
 <body>
 	{{> header}}
 	{{> nav}}
+
+	<main>
+		<div class="banner-container">
+			<div class="banner-title">Find suggestions</div>
+			<form>
+				<input type="text" class="banner-search">
+			</form>
+		</div>
+	</main>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="header.js"></script>
