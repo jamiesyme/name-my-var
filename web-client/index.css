@@ -1,3 +1,4 @@
+/* Banner */
 .banner-container {
 	background-color: #EEE;
 	padding: 7.0rem 5.0rem 11.0rem 5.0rem;
@@ -18,4 +19,28 @@ input.banner-search {
 	display: block;
 	margin: 0 auto;
 	width: 48.0rem;
+}
+
+/* Content */
+.content-container {
+
+}
+
+.content-block {
+
+}
+
+.content-block i.material-icons {
+	font-size: 8.0rem;
+	padding: 2.0rem;
+	border: 3px solid #9b4dca;
+	border-radius: 8.0rem;
+}
+
+.content-block .content-title {
+
+}
+
+.content-block p {
+
 }
