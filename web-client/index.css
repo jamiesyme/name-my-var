@@ -23,11 +23,15 @@ input.banner-search {
 
 /* Content */
 .content-container {
-
+	padding: 7.0rem 5.0rem 11.0rem 5.0rem;
 }
 
 .content-block {
+	margin: 2.4rem 8.0rem;
+}
 
+.content-block .content-icon {
+	float: left;
 }
 
 .content-block i.material-icons {
@@ -37,8 +41,12 @@ input.banner-search {
 	border-radius: 8.0rem;
 }
 
-.content-block .content-title {
+.content-block .content-right {
+	margin-left: 18.0rem;
+}
 
+.content-block .content-title {
+	font-size: 4.0rem;
 }
 
 .content-block p {
