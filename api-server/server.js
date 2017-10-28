@@ -1,4 +1,6 @@
 var Hapi = require('hapi');
+var Joi = require('joi');
+var Boom = require('boom');
 
 var server = new Hapi.Server();
 server.connection({
@@ -9,15 +11,27 @@ server.route({
 	method: 'GET',
 	path: '/search',
 	handler: function(request, reply) {
-		return reply({
-			words: [
-				'bar',
-				'fizzBuzz',
-				'foo',
-				'stackOverflow',
-				'steal',
-			]
-		});
+		var originalWord = request.query.q;
+		var lowerWord = originalWord.toLowerCase();
+
+		if (lowerWord === 'command') {
+			return reply({
+				synonyms: [ 'Command', 'Directive', 'Operation', 'Order' ],
+				relatedWords: [ 'Commander', 'Mission', 'Processor' ],
+				abbreviations: [ 'Cmd' ],
+				examples: [ ],
+				definitions: [ ],
+			});
+		}
+
+		return reply(Boom.notFound());
+	},
+	config: {
+		validate: {
+			query: {
+				q: Joi.string().required().min(1)
+			}
+		}
 	}
 });
 
