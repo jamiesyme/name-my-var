@@ -9,7 +9,8 @@ header {
 	right: 0;
 	top: 0;
 }
-main{
+
+main {
 	margin-top: 6.4rem;
 }
 
@@ -20,4 +21,14 @@ main{
 header .nav-link {
 	left: 0;
 	position: absolute;
+}
+
+@media (min-width: 40.0rem) {
+	header {
+		visibility: hidden;
+	}
+
+	main {
+		margin-top: 0;
+	}
 }
