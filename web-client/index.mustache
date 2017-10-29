@@ -20,9 +20,65 @@
 
 	<main>
 		<div class="container">
-			<div class="banner-container">
+			<div class="banner">
 				<div class="banner-title">find alternatives</div>
-				<input type="text" class="search-input" placeholder="enter search term...">
+				<form class="row">
+					<input autofocus type="text" class="search-input column column-50 column-offset-25">
+				</form>
+			</div>
+			<div class="search-results">
+				<section class="row">
+					<h1 class="section-label column">synonyms</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">command</a></li>
+						<li><a href="#" class="search-term">directive</a></li>
+						<li><a href="#" class="search-term">operation</a></li>
+						<li><a href="#" class="search-term">order</a></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">related words</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">commander</a></li>
+						<li><a href="#" class="search-term">mission</a></li>
+						<li><a href="#" class="search-term">processor</a></li>
+						<li class="filler"></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">abbreviations</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">cmd</a></li>
+						<li class="filler"></li>
+						<li class="filler"></li>
+						<li class="filler"></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">examples</h1>
+					<ol class="examples-container column column-50">
+						<li>
+							<a href="#" class="repo-link">google/ProcessMe</a>
+							<a href="#" class="item-link">struct Operation</a>
+						</li>
+						<li>
+							<a href="#" class="repo-link">dropbox/ApiServer</a>
+							<a href="#" class="item-link">class Command</a>
+						</li>
+					</ol>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">definitions</h1>
+					<ol class="definitions-container column column-50">
+						<li>(n) an individual unit of work to be done</li>
+					</ol>
+					<div class="column"></div>
+				</section>
+				<a href="#" class="suggestion-link">Make a suggestion</a>
 			</div>
 		</div>
 	</main>
