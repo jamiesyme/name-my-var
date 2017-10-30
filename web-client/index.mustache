@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Name My Var</title>
+	<title>name my var</title>
 
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -14,40 +14,79 @@
 	<link rel="stylesheet" href="nav.css">
 	<link rel="stylesheet" href="index.css">
 </head>
-<body>
+<body class="block-transitions">
 	{{> header}}
 	{{> nav}}
 
 	<main>
-		<div class="banner-container">
-			<div class="banner-title">Find Suggestions</div>
-			<form>
-				<input type="text" class="banner-search" placeholder="Enter search term...">
-			</form>
-		</div>
-
-		<div class="content-container">
-			<div class="content-block">
-				<a class="content-icon"><i class="material-icons">lightbulb_outline</i></a>
-				<div class="content-right">
-					<a class="content-title">Naming Tips</a>
-					<p>Cupcake ipsum dolor. Sit amet sugar plum carrot cake lemon drops cake. Tiramisu pie halvah apple pie. Carrot cake carrot cake wafer marshmallow jelly cheesecake.
-</p>
-				</div>
+		<div class="container">
+			<div class="banner">
+				<div class="banner-title">find alternatives</div>
+				<form class="row">
+					<input autofocus type="text" class="search-input column column-50 column-offset-25">
+				</form>
 			</div>
-			<div class="content-block">
-				<a class="content-icon"><i class="material-icons">code</i></a>
-				<div class="content-right">
-					<a class="content-title">Source Code</a>
-					<p>Cupcake ipsum dolor sit amet tootsie roll sesame snaps sweet roll. Toffee chocolate bar halvah toffee gummies. Candy dessert soufflé brownie donut tootsie roll jelly beans.
-</p>
-				</div>
+			<div class="search-results">
+				<section class="row">
+					<h1 class="section-label column">synonyms</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">command</a></li>
+						<li><a href="#" class="search-term">directive</a></li>
+						<li><a href="#" class="search-term">operation</a></li>
+						<li><a href="#" class="search-term">order</a></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">related words</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">commander</a></li>
+						<li><a href="#" class="search-term">mission</a></li>
+						<li><a href="#" class="search-term">processor</a></li>
+						<li class="filler"></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">abbreviations</h1>
+					<ul class="search-terms-container column column-50">
+						<li><a href="#" class="search-term">cmd</a></li>
+						<li class="filler"></li>
+						<li class="filler"></li>
+						<li class="filler"></li>
+					</ul>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">examples</h1>
+					<ol class="examples-container column column-50">
+						<li>
+							<a href="#" class="repo-link">google/ProcessMe</a>
+							<a href="#" class="item-link">struct Operation</a>
+						</li>
+						<li>
+							<a href="#" class="repo-link">dropbox/ApiServer</a>
+							<a href="#" class="item-link">class Command</a>
+						</li>
+					</ol>
+					<div class="column"></div>
+				</section>
+				<section class="row">
+					<h1 class="section-label column">definitions</h1>
+					<ol class="definitions-container column column-50">
+						<li>(n) an individual unit of work to be done</li>
+					</ol>
+					<div class="column"></div>
+				</section>
+				<a href="#" class="suggestion-link">Make a suggestion</a>
 			</div>
 		</div>
 	</main>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="common.js"></script>
 	<script src="header.js"></script>
 	<script src="nav.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>

@@ -17,3 +17,7 @@ html, body {
 		display: none !important;
 	}
 }
+
+.block-transitions * {
+	transition: none !important;
+}

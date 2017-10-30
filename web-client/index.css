@@ -1,54 +1,116 @@
-/* Banner */
-.banner-container {
-	background-color: #EEE;
-	padding: 7.0rem 5.0rem 11.0rem 5.0rem;
+main {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
-.banner-container form {
-	margin-bottom: 0;
+main > .container {
+	height: 100%;
+}
+
+.banner {
+	margin-bottom: 6.0rem;
+	padding-top: 0;
+	position: relative;
+	top: 40%;
+	transform: translateY(-50%);
+	transition: all 0.5s;
+}
+
+.search-mode .banner {
+	padding-top: 6.0rem;
+	top: 0;
+	transform: translateY(0);
 }
 
 .banner-title {
+	bottom: 8.0rem;
 	font-size: 6.0rem;
-	margin-bottom: 4.0rem;
+	left: 0;
+	opacity: 1;
+	position: absolute;
+	right: 0;
 	text-align: center;
+	transition: all 1.0s;
 }
 
-input.banner-search {
+.search-mode .banner-title {
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+input.search-input {
 	background-color: white;
 	display: block;
 	margin: 0 auto;
-	width: 48.0rem;
+	max-width: 48.0rem;
 }
 
-/* Content */
-.content-container {
-	padding: 7.0rem 5.0rem 11.0rem 5.0rem;
+.search-results {
+	opacity: 0;
+	transition: all 0.2s;
+	visibility: hidden;
 }
 
-.content-block {
-	margin: 2.4rem 8.0rem;
+.search-mode .search-results {
+	opacity: 1;
+	transition: all 0.8s;
+	visibility: visible;
 }
 
-.content-block .content-icon {
-	float: left;
+.search-results section {
+	margin-bottom: 1.0rem;
+	margin-top: 1.0rem;
 }
 
-.content-block i.material-icons {
-	font-size: 8.0rem;
-	padding: 2.0rem;
-	border: 3px solid #9b4dca;
-	border-radius: 8.0rem;
+.search-results .section-label {
+	font-size: 1.6rem;
+	letter-spacing: 0.1rem;
+	position: relative;
+	right: 2.0rem;
+	text-align: right;
 }
 
-.content-block .content-right {
-	margin-left: 18.0rem;
+.search-terms-container {
+	display: flex !important;
+	justify-content: space-between;
+	list-style: none;
 }
 
-.content-block .content-title {
-	font-size: 4.0rem;
+.search-terms-container li {
+	width: calc(25% - 0.5rem);
 }
 
-.content-block p {
+.search-terms-container a {
+	background-color: #f4f4f4;
+	display: block;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
 
+.examples-container {
+	list-style-position: outside;
+	padding-left: 3.0rem !important;
+}
+
+.examples-container .repo-link {
+	display: block;
+}
+
+.examples-container .item-link {
+	display: block;
+	padding-left: 2.0rem;
+}
+
+.definitions-container {
+	list-style-position: outside;
+	padding-left: 3.0rem !important;
+}
+
+.suggestion-link {
+	display: block;
+	margin: 3.0rem 0;
+	text-align: center;
 }
