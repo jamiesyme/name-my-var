@@ -11,18 +11,18 @@ main > .container {
 }
 
 .banner {
+	margin-bottom: 6.0rem;
+	padding-top: 0;
 	position: relative;
 	top: 40%;
 	transform: translateY(-50%);
 	transition: all 0.5s;
-	padding-top: 0;
-	margin-bottom: 6.0rem;
 }
 
 .search-mode .banner {
+	padding-top: 6.0rem;
 	top: 0;
 	transform: translateY(0);
-	padding-top: 6.0rem;
 }
 
 .banner-title {
@@ -33,7 +33,7 @@ main > .container {
 	position: absolute;
 	right: 0;
 	text-align: center;
-	transition: all 1.5s;
+	transition: all 1.0s;
 }
 
 .search-mode .banner-title {
@@ -48,36 +48,35 @@ input.search-input {
 	max-width: 48.0rem;
 }
 
-
 .search-results {
-	visibility: hidden;
 	opacity: 0;
 	transition: all 0.2s;
+	visibility: hidden;
 }
 
 .search-mode .search-results {
-	visibility: visible;
 	opacity: 1;
-	transition: all 1.0s;
+	transition: all 0.8s;
+	visibility: visible;
 }
 
 .search-results section {
-	margin-top: 1.0rem;
 	margin-bottom: 1.0rem;
+	margin-top: 1.0rem;
 }
 
 .search-results .section-label {
 	font-size: 1.6rem;
 	letter-spacing: 0.1rem;
-	text-align: right;
 	position: relative;
 	right: 2.0rem;
+	text-align: right;
 }
 
 .search-terms-container {
-	list-style: none;
 	display: flex !important;
 	justify-content: space-between;
+	list-style: none;
 }
 
 .search-terms-container li {
@@ -85,8 +84,8 @@ input.search-input {
 }
 
 .search-terms-container a {
-	display: block;
 	background-color: #f4f4f4;
+	display: block;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
@@ -112,6 +111,6 @@ input.search-input {
 
 .suggestion-link {
 	display: block;
-	text-align: center;
 	margin: 3.0rem 0;
+	text-align: center;
 }
