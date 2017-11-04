@@ -16,7 +16,5 @@ sudo apt install nginx
 
 1. Download the config file: `namemyvar.com`
 2. Move it to the directory: `/etc/nginx/sites-available/`
-3. Symlink it to sites-enabled
-
- `sudo ln -s /etc/nginx/sites-available/namemyvar.com /etc/nginx/sites-enabled/namemyvar.com`
+3. Symlink it to sites-enabled `sudo ln -s /etc/nginx/sites-available/namemyvar.com /etc/nginx/sites-enabled/namemyvar.com`
 4. Reload NGINX to make the configuration take effect: `sudo systemctl reload nginx`
