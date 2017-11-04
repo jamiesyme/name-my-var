@@ -5,7 +5,7 @@
 			"name": "command",
 			"specificity": -0.2,
 			"alternatives": ["action instruction", "order", "directive"],
-			"relatedWords": ["address", "code", "request"],
+			"relatedTerms": ["address", "code", "request"],
 			"examples": [],
 			"commonUses": [
 				"instruction or code to be executed"
