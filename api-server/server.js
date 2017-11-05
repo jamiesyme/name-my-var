@@ -29,6 +29,9 @@ server.route({
 		return reply(result);
 	},
 	config: {
+		cors: {
+			origin: ['*']
+		},
 		validate: {
 			query: {
 				q: Joi.string().required().min(1)
