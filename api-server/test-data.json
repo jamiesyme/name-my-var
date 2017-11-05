@@ -19,14 +19,16 @@
 			"relatedTerms": ["j", "k", "x"],
 			"examples": [
 				{
-					"project": "google/protobuf",
-					"label": "zero_copy_stream_unittest.cc",
-					"url": "https://github.com/google/protobuf/blob/fa5a69e73b0dd667ff15062adbc170310d440ee9/src/google/protobuf/io/zero_copy_stream_unittest.cc#L287"
+					"projectName": "google/protobuf",
+					"projectUrl": "https://github.com/google/protobuf",
+					"exampleName": "zero_copy_stream_unittest.cc#L287",
+					"exampleUrl": "https://github.com/google/protobuf/blob/fa5a69e73b0dd667ff15062adbc170310d440ee9/src/google/protobuf/io/zero_copy_stream_unittest.cc#L287"
 				},
 				{
-					"project": "facebookresearch/fastText",
-					"label": "model.cc",
-					"url": "https://github.com/facebookresearch/fastText/blob/f10ec1faea1605d40fdb79fe472cc2204f3d584c/src/model.cc#L331"
+					"projectName": "facebookresearch/fastText",
+					"projectUrl": "https://github.com/facebookresearch/fastText",
+					"exampleName": "model.cc#L331",
+					"exampleUrl": "https://github.com/facebookresearch/fastText/blob/f10ec1faea1605d40fdb79fe472cc2204f3d584c/src/model.cc#L331"
 				}
 			],
 			"commonUses": [
