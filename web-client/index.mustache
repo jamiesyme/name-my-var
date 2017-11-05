@@ -22,63 +22,50 @@
 		<div class="container">
 			<div class="banner">
 				<div class="banner-title">find alternatives</div>
-				<form class="row">
-					<input autofocus type="text" class="search-input column column-50 column-offset-25">
-				</form>
+				<input id="search-input" autofocus type="text" autocomplete="off" class="search-input column column-50 column-offset-25">
+				<div class="tabs">
+					<a id="variables-tab-button" href="#" class="tab active">variable</a>
+					<a id="functions-tab-button" href="#" class="tab">function</a>
+					<a id="classes-tab-button" href="#" class="tab">class</a>
+				</div>
 			</div>
-			<div class="search-results">
-				<section class="row">
-					<h1 class="section-label column">synonyms</h1>
-					<ul class="search-terms-container column column-50">
-						<li><a href="#" class="search-term">command</a></li>
-						<li><a href="#" class="search-term">directive</a></li>
-						<li><a href="#" class="search-term">operation</a></li>
-						<li><a href="#" class="search-term">order</a></li>
-					</ul>
-					<div class="column"></div>
-				</section>
-				<section class="row">
-					<h1 class="section-label column">related words</h1>
-					<ul class="search-terms-container column column-50">
-						<li><a href="#" class="search-term">commander</a></li>
-						<li><a href="#" class="search-term">mission</a></li>
-						<li><a href="#" class="search-term">processor</a></li>
-						<li class="filler"></li>
-					</ul>
-					<div class="column"></div>
-				</section>
-				<section class="row">
-					<h1 class="section-label column">abbreviations</h1>
-					<ul class="search-terms-container column column-50">
-						<li><a href="#" class="search-term">cmd</a></li>
-						<li class="filler"></li>
-						<li class="filler"></li>
-						<li class="filler"></li>
-					</ul>
-					<div class="column"></div>
-				</section>
-				<section class="row">
-					<h1 class="section-label column">examples</h1>
-					<ol class="examples-container column column-50">
-						<li>
-							<a href="#" class="repo-link">google/ProcessMe</a>
-							<a href="#" class="item-link">struct Operation</a>
-						</li>
-						<li>
-							<a href="#" class="repo-link">dropbox/ApiServer</a>
-							<a href="#" class="item-link">class Command</a>
-						</li>
-					</ol>
-					<div class="column"></div>
-				</section>
-				<section class="row">
-					<h1 class="section-label column">definitions</h1>
-					<ol class="definitions-container column column-50">
-						<li>(n) an individual unit of work to be done</li>
-					</ol>
-					<div class="column"></div>
-				</section>
-				<a href="#" class="suggestion-link">Make a suggestion</a>
+			<div id="search-error" class="error"></div>
+			<div id="search-results" class="search-results">
+				<div style="display: none;">
+					results for <button id="normalized-query" class="term"></button> as a:
+				</div>
+				<div id="variables-tab">
+					<div class="alternatives-container">
+						<h1>alternatives</h1>
+						<ul class="alternatives terms-container"></ul>
+					</div>
+					<div class="related-terms-container">
+						<h1>related terms</h1>
+						<ul class="related-terms terms-container"></ul>
+					</div>
+					<div class="common-uses-container">
+						<h1>common uses</h1>
+						<ul class="common-uses"></ul>
+					</div>
+					<div class="specificity-container">
+						<h1>specificity</h1>
+						<div>
+							<a class="specificity-category" href="#"></a>
+							<span class="specificity-value"></span>
+							<div class="specificity-brief"></div>
+						</div>
+					</div>
+					<div class="examples-container">
+						<h1>examples</h1>
+						<ul class="examples"></ul>
+					</div>
+				</div>
+				<div id="functions-tab" style="display: none;">
+					<!-- the variables tab will be cloned in index.js -->
+				</div>
+				<div id="classes-tab" style="display: none;">
+					<!-- the variables tab will be cloned in index.js -->
+				</div>
 			</div>
 		</div>
 	</main>

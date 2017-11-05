@@ -1,3 +1,5 @@
+/* main */
+
 main {
 	bottom: 0;
 	left: 0;
@@ -10,8 +12,12 @@ main > .container {
 	height: 100%;
 }
 
+
+
+/* banner and search input */
+
 .banner {
-	margin-bottom: 6.0rem;
+	margin-bottom: 4.0rem;
 	padding-top: 0;
 	position: relative;
 	top: 40%;
@@ -26,7 +32,7 @@ main > .container {
 }
 
 .banner-title {
-	bottom: 8.0rem;
+	bottom: 12.0rem;
 	font-size: 6.0rem;
 	left: 0;
 	opacity: 1;
@@ -48,7 +54,45 @@ input.search-input {
 	max-width: 48.0rem;
 }
 
+.tabs {
+	display: flex;
+	margin: 1.0rem auto 0 auto;
+	max-width: 48.0rem;
+	opacity: 0;
+	transition: all 0.3s;
+	visibility: hidden;
+}
+
+.search-mode .tabs {
+	opacity: 1;
+	transition: all 0.3s;
+	visibility: visible;
+}
+
+.tab {
+	border-bottom: 0.4rem solid transparent;
+	color: #ccc;
+	display: block;
+	padding: 1.0rem;
+}
+
+.tab.active {
+	border-bottom: 0.4rem solid #606c76;
+	color: #606c76;
+	font-weight: 700;
+}
+
+
+/* search results */
+
+.error {
+	margin: 0 auto;
+	max-width: 48.0rem;
+}
+
 .search-results {
+	margin: 0 auto;
+	max-width: 48.0rem;
 	opacity: 0;
 	transition: all 0.2s;
 	visibility: hidden;
@@ -56,57 +100,79 @@ input.search-input {
 
 .search-mode .search-results {
 	opacity: 1;
-	transition: all 0.8s;
+	transition: all 0.2s;
 	visibility: visible;
 }
 
-.search-results section {
-	margin-bottom: 1.0rem;
-	margin-top: 1.0rem;
+.search-mode .search-results.hidden {
+	opacity: 0;
+	visbility: hidden;
 }
 
-.search-results .section-label {
+.search-results h1 {
 	font-size: 1.6rem;
 	letter-spacing: 0.1rem;
-	position: relative;
-	right: 2.0rem;
-	text-align: right;
+	position: absolute;
+	transform: translateX(calc(-100% - 4.0rem));
 }
 
-.search-terms-container {
+.term {
+	background-color: white;
+	border-radius: 0.3rem;
+	color: #9b4dca;
+	height: 2.8rem;
+	line-height: 2.8rem;
+	margin: 0 0.5rem;
+	padding: 0 1.0rem;
+	text-transform: none;
+}
+
+.terms-container {
 	display: flex !important;
-	justify-content: space-between;
+	flex-flow: row;
 	list-style: none;
 }
 
-.search-terms-container li {
-	width: calc(25% - 0.5rem);
+.alternatives:empty:before {
+	content: 'none';
+	font-style: italic;
 }
 
-.search-terms-container a {
-	background-color: #f4f4f4;
-	display: block;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
+.related-terms:empty:before {
+	content: 'none';
+	font-style: italic;
 }
 
-.examples-container {
-	list-style-position: outside;
-	padding-left: 3.0rem !important;
+.common-uses:empty:before {
+	content: 'unknown';
+	font-style: italic;
+	margin-left: -1.0rem;
 }
 
-.examples-container .repo-link {
-	display: block;
+.common-uses, .examples {
+	margin-left: 1.0rem;
 }
 
-.examples-container .item-link {
-	display: block;
-	padding-left: 2.0rem;
+.specificity-container {
+	margin-bottom: 2.5rem;
 }
 
-.definitions-container {
-	list-style-position: outside;
-	padding-left: 3.0rem !important;
+.specificity-brief:empty:before {
+	content: 'unknown';
+	font-style: italic;
+}
+
+.specificity-value:not(:empty):before {
+	content: '( ';
+}
+.specificity-value:not(:empty):after {
+	content: ' )';
+}
+
+.examples:empty:before {
+	content: 'none';
+	font-style: italic;
+	margin-left: -1.0rem;
 }
 
 .suggestion-link {
