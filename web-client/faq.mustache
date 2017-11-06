@@ -20,7 +20,30 @@
 
 	<main>
 		<div class="container">
-			<!-- TODO -->
+			<h1>faqs</h1>
+			<h2>what is this thing?</h2>
+			<p>namemyvar.com is a search engine for variable, function, and class names.</p>
+			<p>Given an input name, such as “error”, the website will provide suggestions for alternative and related names, common uses, and examples of where the name is used in the wild. It will also rate the specificity of the name (experimental) to suggest where it is most appropriate to use.</p>
+			<h2>why is this a thing?</h2>
+			<p>namemyvar.com is intended to help coders write better code.</p>
+			<p>Good code is clean code, and clean code is achieved by - among other things - picking simple and succinct names for variables, functions, and classes.</p>
+			<p>In most cases, the “right” name is the obvious name; it’s the first one that comes to mind when writing the code. Most coders have a common vocabulary that’s used to name things in a standard way. For example, any C programmer that sees the name “addr” knows that the variable contains an address.</p>
+			<p>However, sometimes the answer isn’t as obvious, either because the obvious choice is already being used for something else, or because that name isn’t yet in your lexicon.</p>
+			<p>It’s during these cases that we suggest you pick a starting name, and use this website to explore the namespace. We hope that by providing alternatives and real-world example usages, you can settle upon a standard name, making it easier for the coders who will use and maintain your code in the future.</p>
+			<h2>how does this thing work?</h2>
+			<p>Currently, the system is only loaded with <a href="#" target="_blank">test data</a>, and contains names like “i” and “error”. However, the rest of this section describes the vision for how the system will work in the future.</p>
+			<p>We use GitHub’s API to pick the most popular (most starred) repos to analyze. We currently limit our search to C++ projects, as the type system provides far more information than a dynamic language would provide. We then clone the repo and begin our analysis.</p>
+			<p>The analysis process involves combing through the source code, pulling out any information that relates names by looking at:</p>
+			<ul>
+				<li><b>class definitions:</b> these provide info about composition through class members, specialization through inheritance, and they relate function names to classes;</li>
+				<li><b>class instantiations:</b> beyond relating variable names to classes, if different variable names are used across instantiations of the same class, those names could be considered alternatives;</li>
+				<li><b>assignments to function output:</b> these provide similar information as class instantiations, but with respect to functions instead of classes;</li>
+				<li><b>variable complements:</b> if certain variable names are most often seen side-by-side, or in close proximity, those names could be considered related;</li>
+				<li><b>equivalent names:</b> this extends to functions and classes as well, but if two variable names are used for identical or similar purposes, such as functioning as both a loop counter and an array index, those terms could be considered alternatives or related;</li>
+				<li><b>constants:</b> if several constants are defined by the same value, the constant names could be considered alternatives.</li>
+			</ul>
+			<p>All of this information is collected from each repo, and combined in a common database. The information is weighted based on numerous factors, including file size (smaller files make for simpler examples), repo popularity (more people looking at the code often means more standard naming), term frequency, and more.</p>
+			<p>If you’re interested in learning more about the process, you can check out the source code on <a href="https://github.com/jamiesyme/name-my-var" target="_blank">GitHub</a>.</p>
 		</div>
 	</main>
 
