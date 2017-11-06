@@ -5,6 +5,7 @@ var c = function(f) {
 var client = {
 	html: [
 		c('index.mustache'),
+		c('faq.mustache'),
 	],
 	css: [
 		c('*.css'),
