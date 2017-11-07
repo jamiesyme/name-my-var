@@ -3,3 +3,4 @@
 		$('body').removeClass('block-transitions');
 	});
 })();
+var apiUrl = '{{{ apiUrl }}}';

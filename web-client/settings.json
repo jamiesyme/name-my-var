@@ -1,1 +1,3 @@
-{}
+{
+	"apiUrl": "http://dev-nmv:8001"
+}

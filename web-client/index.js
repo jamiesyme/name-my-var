@@ -176,7 +176,7 @@ var updateSearch;
 		currentSearchTerm = term;
 
 		$searchError.hide();
-		$.getJSON('//dev-nmv:8001/search', {q: term})
+		$.getJSON(apiUrl + '/search', {q: term})
 			.done(function(results) {
 				// If there was a long delay in our request for some reason, and
 				// another search started before we finished, we don't want these
