@@ -1,43 +1,67 @@
-var c = function(f) {
-	return 'web-client/' + f;
-}
+class Client {
+	constructor(srcDir, distDir, settingsFile) {
+		this.srcDir = srcDir;
+		this.distDir = distDir;
+		this.settingsFile = settingsFile;
+		this.templateFiles = [];
+		this.rawFiles = [];
+	}
 
-var client = {
-	html: [
-		c('index.mustache'),
-		c('faq.mustache'),
-	],
-	css: [
-		c('*.css'),
-		'node_modules/milligram/dist/milligram.css',
-		'node_modules/normalize.css/normalize.css',
-	],
-	js: [
-		c('*.js'),
-	],
-	settings: c('settings.json'),
-	dist:     c('dist')
+	addPage(baseName) {
+		this.templateFiles = this.templateFiles.concat([
+			this.srcDir + '/' + baseName + '.mst.html',
+			this.srcDir + '/' + baseName + '.mst.css',
+			this.srcDir + '/' + baseName + '.mst.js',
+		]);
+		this.rawFiles = this.rawFiles.concat([
+			this.srcDir + '/' + baseName + '.html',
+			this.srcDir + '/' + baseName + '.css',
+			this.srcDir + '/' + baseName + '.js',
+		]);
+	}
+
+	addComponent(baseName) {
+		this.templateFiles = this.templateFiles.concat([
+			this.srcDir + '/' + baseName + '.mst.css',
+			this.srcDir + '/' + baseName + '.mst.js',
+		]);
+		this.rawFiles = this.rawFiles.concat([
+			this.srcDir + '/' + baseName + '.html',
+			this.srcDir + '/' + baseName + '.css',
+			this.srcDir + '/' + baseName + '.js',
+		]);
+	}
 };
+
+var srcDir       = 'web-client';
+var distDir      = 'web-client/dist';
+var settingsFile = 'web-client/settings.json';
+var client       = new Client(srcDir, distDir, settingsFile);
+client.addPage('faq');
+client.addPage('index');
+client.addComponent('common');
+client.addComponent('header');
+client.addComponent('nav');
+client.rawFiles.push('node_modules/milligram/dist/milligram.css');
+client.rawFiles.push('node_modules/normalize.css/normalize.css');
 
 var gulp = require('gulp');
 var mustache = require('gulp-mustache');
 var rename = require('gulp-rename');
 
-gulp.task('default', ['watch']);
 gulp.task('watch', function() {
-	gulp.watch([
-		c('*.mustache'),
-		c('*.css'),
-		c('*.js'),
-	], ['build-client']);
+	gulp.watch(client.srcDir + '/' + '*', 'build-client');
 });
+
 gulp.task('build-client', function() {
-	gulp.src(client.html)
-		.pipe(mustache(client.settings))
-		.pipe(rename(function(path) { path.extname = '.html'; }))
-		.pipe(gulp.dest(client.dist));
-	gulp.src(client.css)
-		.pipe(gulp.dest(client.dist));
-	gulp.src(client.js)
-		.pipe(gulp.dest(client.dist));
+	gulp.src(client.templateFiles)
+		.pipe(mustache(client.settingsFile))
+		.pipe(rename(function(path) {
+			path.extname = path.extname.replace('.mst', '');
+		}))
+		.pipe(gulp.dest(client.distDir));
+	gulp.src(client.rawFiles)
+		.pipe(gulp.dest(client.distDir));
 });
+
+gulp.task('default', ['build-client']);
