@@ -11,9 +11,13 @@ $ sudo apt-get install -y nodejs
 $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 $ sudo apt-get update && sudo apt-get install yarn
+$ echo 'PATH="$HOME/.yarn/bin:$PATH" >> "$HOME/.profile"
 
 # Install Yarn packages
 $ yarn install
+
+# Install gulp
+$ yarn global add gulp-cli
 ```
 
 ## Build
@@ -21,15 +25,15 @@ $ yarn install
 To build the web client once:
 
 ```bash
-$ yarn run gulp build-client
+$ gulp
+# or
+$ gulp --production
 ```
 
 To watch the files and build the web client whenever a file changes:
 
 ```bash
-$ yarn run gulp
-# or
-$ yarn run gulp watch
+$ gulp watch
 ```
 
 The build output will be in `web-client/dist`.

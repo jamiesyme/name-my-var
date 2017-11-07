@@ -1,3 +1,8 @@
+var gulp = require('gulp');
+var util = require('gulp-util');
+var mustache = require('gulp-mustache');
+var rename = require('gulp-rename');
+
 class Client {
 	constructor(srcDir, distDir, settingsFile) {
 		this.srcDir = srcDir;
@@ -35,7 +40,7 @@ class Client {
 
 var srcDir       = 'web-client';
 var distDir      = 'web-client/dist';
-var settingsFile = 'web-client/settings.json';
+var settingsFile = 'web-client/' + (util.env.production ? 'settings-prod.json' : 'settings-dev.json');
 var client       = new Client(srcDir, distDir, settingsFile);
 client.addPage('faq');
 client.addPage('index');
@@ -45,12 +50,8 @@ client.addComponent('nav');
 client.rawFiles.push('node_modules/milligram/dist/milligram.css');
 client.rawFiles.push('node_modules/normalize.css/normalize.css');
 
-var gulp = require('gulp');
-var mustache = require('gulp-mustache');
-var rename = require('gulp-rename');
-
 gulp.task('watch', function() {
-	gulp.watch(client.srcDir + '/' + '*', 'build-client');
+	gulp.watch(client.srcDir+'/'+'*', ['build-client']);
 });
 
 gulp.task('build-client', function() {
