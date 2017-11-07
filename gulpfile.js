@@ -57,7 +57,7 @@ gulp.task('build-client', function() {
 	gulp.src(client.templateFiles)
 		.pipe(mustache(client.settingsFile))
 		.pipe(rename(function(path) {
-			path.extname = path.extname.replace('.mst', '');
+			path.basename = path.basename.replace('.mst', '');
 		}))
 		.pipe(gulp.dest(client.distDir));
 	gulp.src(client.rawFiles)
