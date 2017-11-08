@@ -180,8 +180,13 @@ var updateSearch;
 			$tab.find('.term').click(function(e) {
 				e.preventDefault();
 				var t = $(e.target).text();
+
+				// We go through the regular process of inputting a value,
+				// triggering the input event, and triggering the focusout event
+				// to completely simulate a new search (less bugs this way).
 				$searchInput.val(t);
-				updateSearch(t);
+				$searchInput.trigger('input');
+				$searchInput.trigger('focusout');
 			});
 		});
 	}
@@ -219,7 +224,6 @@ var updateSearch;
 				// again in a couple minutes, the search will go through.
 				currentSearchTerm = null;
 			});
-
 	}
 })();
 
@@ -230,6 +234,12 @@ var updateSearch;
 	var $main                = $('main');
 	var instantSearchDelay   = 500; // ms
 	var instantSearchTimeout = null;
+
+	function doSearch(term) {
+		$searchResults.addClass('hidden');
+		$searchError.hide();
+		updateSearch(term);
+	}
 
 	// When the user starts typing, enable search mode
 	$searchInput.on('input', function() {
@@ -254,7 +264,7 @@ var updateSearch;
 			// typing for X milliseconds, we're allowed to make a request.
 			clearTimeout(instantSearchTimeout);
 			instantSearchTimeout = setTimeout(function() {
-				updateSearch(term);
+				doSearch(term);
 			}, instantSearchDelay);
 		}
 	});
@@ -268,7 +278,8 @@ var updateSearch;
 			$searchError.hide();
 			clearSearch();
 		} else {
-			updateSearch($searchInput.val());
+			clearTimeout(instantSearchTimeout);
+			doSearch($searchInput.val());
 		}
 	});
 
