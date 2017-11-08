@@ -41,6 +41,7 @@
 	});
 })();
 
+var clearSearch;
 var updateSearch;
 (function() {
 	var $searchError         = $('#search-error');
@@ -79,24 +80,29 @@ var updateSearch;
 		return briefs[category];
 	}
 
+	function clearSearchResults() {
+		currentSearchResults = null;
+		$normalizedQuery.text('');
+		[$varTab, $funcTab, $classTab].forEach(function($tab) {
+			$tab.find('.alternatives').empty();
+			$tab.find('.related-terms').empty();
+			$tab.find('.common-uses').empty();
+			$tab.find('.specificity-value').text('');
+			$tab.find('.specificity-category').text('');
+			$tab.find('.specificity-brief').text('');
+			$tab.find('.examples').empty();
+		});
+	}
+
 	function loadSearchResults(results) {
+		clearSearchResults();
+
 		currentSearchResults = results;
 
 		// Set the noramlized query text, so the user know what results they're
 		// looking at (not always immediately clear, due to the normalization
 		// process).
 		$normalizedQuery.text(results.searchTerm);
-
-		// Clear all previous results
-		[$varTab, $funcTab, $classTab].forEach(function($tab) {
-			$tab.find('.alternatives').empty();
-			$tab.find('.related-terms').empty();
-			$tab.find('.common-uses').empty();
-			$tab.find('.specificity-value').html('');
-			$tab.find('.specificity-category').html('');
-			$tab.find('.specificity-brief').html('');
-			$tab.find('.examples').empty();
-		});
 
 		// Load the results
 		results.resultTerms.forEach(function(termData) {
@@ -179,11 +185,13 @@ var updateSearch;
 			});
 		});
 	}
+
+	clearSearch = function() {
+		currentSearchTerm = null;
+		clearSearchResults();
+	}
 	
 	updateSearch = function(term) {
-		if (currentSearchTerm === term) {
-			return;
-		}
 		currentSearchTerm = term;
 
 		$searchError.hide();
@@ -258,7 +266,9 @@ var updateSearch;
 		if (!$searchInput.val().length) {
 			$main.removeClass('search-mode');
 			$searchError.hide();
+			clearSearch();
 		} else {
+			clearTimeout(instantSearchTimeout);
 			updateSearch($searchInput.val());
 		}
 	});
