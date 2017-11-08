@@ -13,6 +13,18 @@
 		},
 		{
 			"type": "variable",
+			"name": "index",
+			"specificity": -0.5,
+			"alternatives": ["i"],
+			"relatedTerms": ["j", "k", "x"],
+			"examples": [],
+			"commonUses": [
+				"loop counter",
+				"array index"
+			]
+		},
+		{
+			"type": "variable",
 			"name": "i",
 			"specificity": -1.0,
 			"alternatives": ["index"],
@@ -34,6 +46,93 @@
 			"commonUses": [
 				"loop counter",
 				"array index"
+			]
+		},
+		{
+			"type": "variable",
+			"name": "j",
+			"specificity": -1.0,
+			"alternatives": [],
+			"relatedTerms": ["i", "k", "x"],
+			"examples": [],
+			"commonUses": [
+				"loop counter",
+				"array index"
+			]
+		},
+		{
+			"type": "variable",
+			"name": "k",
+			"specificity": -1.0,
+			"alternatives": [],
+			"relatedTerms": ["i", "j", "x"],
+			"examples": [],
+			"commonUses": [
+				"loop counter",
+				"array index"
+			]
+		},
+		{
+			"type": "variable",
+			"name": "x",
+			"specificity": -1.0,
+			"alternatives": [],
+			"relatedTerms": ["i", "j", "k"],
+			"examples": [
+				{
+					"projectName": "jamiesyme/lattice",
+					"projectUrl": "https://github.com/jamiesyme/lattice",
+					"exampleName": "geometry-utils.h#L4",
+					"exampleUrl": "https://github.com/jamiesyme/lattice/blob/524f2c8481e552582b60e831f6085f71ac2abc62/src/geometry-utils.h#L4"
+				}
+			],
+			"commonUses": [
+				"loop counter",
+				"array index",
+				"position coordinate"
+			]
+		},
+		{
+			"type": "variable",
+			"name": "e",
+			"specificity": -1.0,
+			"alternatives": ["err", "error", "event"],
+			"relatedTerms": ["failed", "warning"],
+			"examples": [
+				{
+					"projectName": "jamiesyme/name-my-var",
+					"projectUrl": "https://github.com/jamiesyme/name-my-var",
+					"exampleName": "nav.js#L11",
+					"exampleUrl": "https://github.com/jamiesyme/name-my-var/blob/87fb710401787c933261e006100a12ffbf4e0c38/web-client/nav.js#L11"
+				}
+			],
+			"commonUses": [
+				"error value",
+				"event"
+			]
+		},
+		{
+			"type": "variable",
+			"name": "err",
+			"specificity": -0.8,
+			"alternatives": ["e", "error"],
+			"relatedTerms": ["failed", "warning"],
+			"examples": [
+				{
+					"projectName": "jamiesyme/videoso",
+					"projectUrl": "https://github.com/jamiesyme/videoso",
+					"exampleName": "authentication.go#L267",
+					"exampleUrl": "https://github.com/jamiesyme/videoso/blob/master/api/authentication.go#L267"
+				},
+				{
+					"projectName": "jamiesyme/videoso",
+					"projectUrl": "https://github.com/jamiesyme/videoso",
+					"exampleName": "login.gotmpl#L232",
+					"exampleUrl": "https://github.com/jamiesyme/videoso/blob/master/webclient/login.gotmpl#L232"
+				}
+			],
+			"commonUses": [
+				"error value"
 			]
 		},
 		{
@@ -63,9 +162,27 @@
 			"type": "class",
 			"name": "error",
 			"specificity": -0.5,
-			"alternatives": ["network error", "file not found error", "parsing error"],
+			"alternatives": ["network error", "file not found error", "parser error"],
 			"relatedTerms": ["warning", "problem"],
 			"examples": [],
+			"commonUses": [
+				"error interface"
+			]
+		},
+		{
+			"type": "class",
+			"name": "parser error",
+			"specificity": 0.3,
+			"alternatives": ["error"],
+			"relatedTerms": ["network error", "file not found error"],
+			"examples": [
+				{
+					"projectName": "martinLutz1/ToyParser",
+					"projectUrl": "https://github.com/martinLutz1/ToyParser",
+					"exampleName": "parsererror.h#L7",
+					"exampleUrl": "https://github.com/martinLutz1/ToyParser/blob/015170281ab95a90ced455fac2bb396ac59cdd8f/parsererror.h#L7"
+				}
+			],
 			"commonUses": [
 				"error interface"
 			]
