@@ -1,6 +1,6 @@
 header {
 	align-items: center;
-	background-color: white;
+	background-color: #22313f;
 	display: flex;
 	height: 6.4rem;
 	justify-content: center;
@@ -15,6 +15,7 @@ main {
 }
 
 .header-title {
+	color: #eee;
 	font-size: 3.6rem;
 }
 
