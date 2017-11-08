@@ -43,8 +43,9 @@
 
 var updateSearch;
 (function() {
-	var $searchResults       = $('#search-results');
 	var $searchError         = $('#search-error');
+	var $searchInput         = $('#search-input');
+	var $searchResults       = $('#search-results');
 	var $normalizedQuery     = $('#normalized-query');
 	var $varTab              = $('#variables-tab');
 	var $funcTab             = $('#functions-tab');
@@ -165,6 +166,16 @@ var updateSearch;
 							})
 						)
 				);
+			});
+		});
+
+		// Make 'term' links initiate a new search
+		[$varTab, $funcTab, $classTab].forEach(function($tab) {
+			$tab.find('.term').click(function(e) {
+				e.preventDefault();
+				var t = $(e.target).text();
+				$searchInput.val(t);
+				updateSearch(t);
 			});
 		});
 	}
