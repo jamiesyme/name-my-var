@@ -18,3 +18,9 @@ sudo apt install nginx
 2. Move it to the directory: `/etc/nginx/sites-available/`
 3. Symlink it to sites-enabled `sudo ln -s /etc/nginx/sites-available/namemyvar.com /etc/nginx/sites-enabled/namemyvar.com`
 4. Reload NGINX to make the configuration take effect: `sudo systemctl reload nginx`
+
+### Enable https ###
+1. Complete steps 1-4 above
+2. Add the certbot repo `sudo add-apt-repository ppa:certbot/certbot` (skip if using debian)
+3. Install certbot `sudo apt update && sudo apt install python-certbot-nginx`
+4. 
