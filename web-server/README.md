@@ -23,4 +23,9 @@ sudo apt install nginx
 1. Complete steps 1-4 above
 2. Add the certbot repo `sudo add-apt-repository ppa:certbot/certbot` (skip if using debian)
 3. Install certbot `sudo apt update && sudo apt install python-certbot-nginx`
-4. 
+4. Ensure that the server_name line is included in your site config
+5. Allow https traffic through your firewall
+6. Run the command `sudo certbot --nginx -d example.com -d www.example.com` with your domain names after each `-d`
+7. Follow the prompts
+
+Instructions modified from https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04
