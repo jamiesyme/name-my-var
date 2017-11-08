@@ -1,0 +1,17 @@
+main .container {
+	max-width: 80.0rem;
+	padding-bottom: 5.0rem;
+	padding-top: 5.0rem;
+}
+
+main h1 {
+	text-align: center;
+}
+
+main h2 {
+	margin-top: 5.0rem;
+}
+
+main ul {
+	margin-left: 2.0rem;
+}
