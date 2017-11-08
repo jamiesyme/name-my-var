@@ -157,16 +157,31 @@ input.search-input {
 	margin-bottom: 2.5rem;
 }
 
-.specificity-brief:empty:before {
-	content: 'unknown';
-	font-style: italic;
+.specificity-category {
+	display: inline;
 }
 
+.specificity-value {
+	display: inline;
+}
 .specificity-value:not(:empty):before {
 	content: '( ';
 }
 .specificity-value:not(:empty):after {
 	content: ' )';
+}
+
+.specificity-value + .specificity-brief:before {
+	content: '\2014  ';
+}
+
+.specificity-brief {
+	display: inline;
+}
+
+.specificity-brief:empty:before {
+	content: 'unknown';
+	font-style: italic;
 }
 
 .examples:empty:before {
