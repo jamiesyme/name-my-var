@@ -268,7 +268,6 @@ var updateSearch;
 			$searchError.hide();
 			clearSearch();
 		} else {
-			clearTimeout(instantSearchTimeout);
 			updateSearch($searchInput.val());
 		}
 	});
