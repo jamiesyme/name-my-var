@@ -38,7 +38,8 @@
 }
 .nav-link:hover {
 	background-color: #eee;
-	color: #606c76;
+	color: #9b4dca;
+	font-weight: 600;
 }
 
 .nav-link-icon {
