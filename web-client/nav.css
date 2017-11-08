@@ -1,5 +1,5 @@
 .sidebar {
-	background-color: white;
+	background-color: #22313f;
 	bottom: 0;
 	overflow-x: hidden;
 	position: fixed;
@@ -30,10 +30,15 @@
 }
 
 .nav-link {
+	color: #eee;
 	display: flex;
+}
+.nav-link:focus {
+	color: #eee;
 }
 .nav-link:hover {
 	background-color: #eee;
+	color: #606c76;
 }
 
 .nav-link-icon {
