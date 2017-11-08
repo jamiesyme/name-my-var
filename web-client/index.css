@@ -111,6 +111,7 @@ input.search-input {
 
 .search-results h1 {
 	font-size: 1.6rem;
+	line-height: 1.6;
 	letter-spacing: 0.1rem;
 	position: absolute;
 	transform: translateX(calc(-100% - 4.0rem));
