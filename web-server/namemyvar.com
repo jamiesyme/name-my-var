@@ -14,7 +14,7 @@ server {
 	
 	location /faq {
 		default_type "text/html";
-		alias /var/www/namemyvar.com/faq.html;
+		try_files $uri $uri.html =404;
 	}
 ssl_certificate /etc/letsencrypt/live/namemyvar.com/fullchain.pem; # managed by Certbot
 ssl_certificate_key /etc/letsencrypt/live/namemyvar.com/privkey.pem; # managed by Certbot
